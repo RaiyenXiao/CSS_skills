@@ -1,0 +1,31 @@
+body {
+    background: #a0b3d6;
+    font-size: 87.5%;
+    margin: 0;
+    line-height: 1.5;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+#header {
+    height: 60px;
+    padding: 0 0 0 40px;
+}
+a {
+    color: #34538b;
+    text-decoration: none;
+}
+#header .logo {
+	display: inline-block;
+    margin-top: 12px;
+    overflow: hidden;
+    float: left;
+}
+.ad, .topa {
+    height: 60px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 250px;
+    text-align: right;
+    overflow: hidden;
+}

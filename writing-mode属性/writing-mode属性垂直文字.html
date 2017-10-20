@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style type="text/css">
+		.verticle-mode {
+		    writing-mode: tb-rl;
+		    -webkit-writing-mode: vertical-rl;      
+		    writing-mode: vertical-rl;
+		}
+		/* IE7比较弱，需要做点额外的动作 */
+		.verticle-mode {
+		    *width: 120px;
+		}
+		.verticle-mode h4,
+		.verticle-mode p {
+		    *display: inline;
+		    *writing-mode: tb-rl;
+		}
+		.verticle-mode h4 {
+		    *float:right;
+		}
+	</style>
+</head>
+<body>
+	<h4>咏柳</h4>
+<p>碧玉妆成一树高，<br>万条垂下绿丝绦。<br>不知细叶谁裁出，<br>二月春风似剪刀。</p>
+
+<div class="verticle-mode">
+    <h4>咏柳</h4>
+    <p>碧玉妆成一树高，<br>万条垂下绿丝绦。<br>不知细叶谁裁出，<br>二月春风似剪刀。</p>
+</div>
+	
+</body>
+</html>

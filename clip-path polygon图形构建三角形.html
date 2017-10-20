@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style>
+		.triangle {
+		    display: block;
+		    height: 20px;
+		    background-color: currentColor;
+		    -webkit-transition: all .25s;
+		    transition: all .25s;
+		}
+		.path1 {
+		    clip-path: polygon(5px 10px, 16px 3px, 16px 17px);
+		}
+		.path2 {
+		    clip-path: polygon(3px 5px, 17px 5px, 10px 16px);
+		}
+		.path3 {
+		    clip-path: polygon(5px 10px, 16px 3px, 16px 10px, 26px 10px, 26px 3px, 37px 10px, 26px 17px, 26px 10px, 16px 10px, 16px 17px);
+		}
+		.path4 {
+		    clip-path: polygon(5px 10px, 16px 3px, 16px 10px, 36px 10px, 36px 3px, 47px 10px, 36px 17px, 36px 10px, 16px 10px, 16px 17px);
+		}
+		.path5 {
+		    clip-path: polygon(5px 10px, 16px 3px, 16px 9px, 36px 9px, 36px 3px, 47px 10px, 36px 17px, 36px 10px, 16px 10px, 16px 17px);
+		}
+		.path6 {
+		    clip-path: polygon(5px 10px, 16px 3px, 16px 9px, 36px 9px, 36px 3px, 47px 10px, 36px 17px, 36px 11px, 16px 11px, 16px 17px);
+		}
+		.path7 {
+		    clip-path: polygon(5px 11px, 5px 9px, 16px 3px, 26px 3px, 40px 9px, 48px 15px, 48px 5px, 40px 11px, 26px 17px, 16px 17px);
+		}
+		
+		.test{width:10px; height:10px; border:10px solid; border-color:#ff3300 #0000ff #339966 #00ff00;}
+	</style>
+</head>
+<body>
+	<dl>
+		<dd>
+			来一个三角<i class="triangle path1"></i>
+		</dd>
+		<dd>
+			鼠标hover朝下转<i class="triangle path2"></i>
+		</dd>
+		<dd>
+			再来一个三角<i class="triangle path3"></i>
+		</dd>
+		<dd>
+			距离开一点<i class="triangle path4"></i>
+		</dd>
+		<dd>
+			再连一根线<i class="triangle path5"></i>
+		</dd>
+		<dd>
+			线不能粗一点吗？<i class="triangle path6"></i>
+		</dd>
+		<dd>
+			鱼？<i class="triangle path7"></i>
+		</dd>
+	</dl>
+	<p>
+		以前的方案 使用CSS border生成三角技术
+	</p>
+	<p>.test{width:10px; height:10px; border:10px solid; border-color:#ff3300 #0000ff #339966 #00ff00;} 当某个div应用了上面这个样式后:</p>
+	<div class="test"></div>
+	<p>现在，设想一下，如果我们现在只保留一个一个上边框，其余边框均transparent透明（或与背景色同色），那么是不是就只显示一个上面红色的边框了，我们测试下，与上面类似的代码，只是修改下其余三个边框的颜色。<br />
+.test{width:10px; height:10px; border:10px solid; border-color:#ff3300 #ffffff #ffffff #ffffff;}</p>
+	<div style="width:10px; height:10px; border:10px solid; border-color:#ff3300 #ffffff #ffffff #ffffff;"></div>
+	<p>上面的是梯形，我要想得到一个三角图案该怎么办呢？显然，很简单，把div的高宽都变成0，只留一边，不就是三角了吗？如下代码：.test{width:0; height:0; border:10px solid; border-color:#ff3300 #ffffff #ffffff #ffffff;}</p>
+	<div style="width:0; height:0; border:10px solid; border-color:#ff3300 #ffffff #ffffff #ffffff;"></div>
+	<p>从等腰直角三角形到普通等腰三角
+上图为等腰直角三角形，之所以为等腰直角，是因为所有的边框宽度是一样的，如果我们将边框宽度设置为不同，那会怎样？则会形成等腰三角形。如下代码：
+
+.test{width:0; height:0; border-width:20px 10px; border-style:solid; border-color:#ff3300 #ffffff #ffffff #ffffff;}</p>
+<div style="width:0; height:0; border-width:20px 10px; border-style:solid; border-color:#ff3300 #ffffff #ffffff #ffffff;"></div>
+<p>从等腰到不等腰
+我们可以不局限于保留一条边框，我们可以保留两条，于是我们可以告别等腰，得到更加锐利的三角，正如一开始所展示的那个三角：
+
+.test{width:0; height:0; border-width:20px 10px; border-style:solid; border-color:#ff3300 #ff3300 #ffffff #ffffff;}</p>
+<div style="width:0; height:0; border-width:20px 10px; border-style:solid; border-color:#ff3300 #ff3300 #ffffff #ffffff;"></div>
+</body>
+</html>

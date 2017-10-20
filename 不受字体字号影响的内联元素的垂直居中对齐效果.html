@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style type="text/css">
+		.icon-arrow {
+		    display: inline-block;
+		    width: 20px;
+		    height: 1ex;
+		   background: url(image/arrow.png) no-repeat center;
+		}
+	</style>
+</head>
+<body>
+	<!--内联元素默认是基线对齐的，而基线就是x的底部，而1ex就是一个x的高度。设想下，假如我们图标高度就是1ex, 同时背景图片居中，岂不是图标和文字天然垂直居中，而且，完全不受字体和字号的影响。因为ex就是一个相对于字体字号的单位-->
+	zhanghanyun<i class="icon-arrow"></i>
+
+	张含韵<i class="icon-arrow"></i>
+</body>
+</html>
+<!--
+	!!!虽然使用ex做高度实现天然垂直对齐看上去很巧妙，但是，也是有局限的，就是如果图标背景的高度超过1ex，我们就只能再请vertical-align出马了……
+
+对了，还有一点。由于IE6-IE7对内联模型的解释有问题，因此，各类vertical-align在这些浏览器下都是有问题，包括这里的ex天然基线对齐，需要特别处理下。
+-->

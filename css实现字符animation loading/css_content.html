@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<style type="text/css">
+		dot {
+		    display: inline-block; 
+		    height: 1em; line-height: 1;
+		    text-align: left;
+		    vertical-align: -.25em;
+		    overflow: hidden;
+		}
+		dot::before {
+		    display: block;
+		    content: '...\A..\A.';
+		    white-space: pre-wrap;   /* 也可以是white-space: pre */
+		    animation: dot 3s infinite step-start both;
+		}
+		@keyframes dot {
+		    33% { transform: translateY(-2em); }
+		    66% { transform: translateY(-1em); }
+		}
+	</style>
+	<!--
+		1.借助Unicode字符，CSS实现换行
+		:after {
+		    content: '\A';
+		    white-space: pre;
+		}
+		其中'\A'其实指的是换行符中的LF字符，其unicode编码是000A，在CSS content属性中则直接写作'\A'；换行符除了LF字符还有CR字符，其Unicode编码是000D，在CSS content属性中则直接写作'\D'。CR字符和LF字符分别指回车（CR）和换行（LF）。
+	-->
+	<!--
+		http://tawian.io/text-spinners/  lodingCSS动画
+	-->
+</head>
+<body>
+	订单提交中<dot>...</dot>
+</body>
+</html>

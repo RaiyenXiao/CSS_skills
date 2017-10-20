@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>PNG格式小图标的CSS任意颜色赋色技术</title>
+	<style type="text/css">
+		.icon{
+			display: block;
+			width: 20px;
+			height: 20px;
+			overflow: hidden;   
+		}
+		.icon-rmb{
+			background: url(image/RMB_P.png) no-repeat center;
+			background-size: cover; 
+		}
+		.icon .rmb{
+			position: relative;
+		    left: -20px;
+		    border-right: 20px solid transparent;
+		    -webkit-filter: drop-shadow(20px 0);
+		    filter: drop-shadow(20px 0 0 blue);
+		}
+	</style>
+	<!--
+		filter: drop-shadow(x偏移, y偏移, 模糊大小, 色值);
+	-->
+</head>
+<body>
+	<div>原图<img src="image/RMB_P.png"/></div>
+	<div class="icon">
+		<div class="icon icon-rmb rmb"></div>
+	</div>
+</body>
+</html>

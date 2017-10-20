@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS writing-mode与text-indent文字下沉效果demo</title>
+	</head>
+	<style type="text/css">
+		a{
+			text-decoration: none;
+		}
+		.btn {
+		    display: block;
+		    color: #a78252;
+		    background-color: #ddc390;
+		    width: 85px; height: 85px;
+		    line-height: 85px;
+		    border: 6px solid #ddc390;
+		    border-radius: 50%;
+		    box-shadow: inset 0 0 0 1px #d6b681, 0 1px, 0 2px, 0 3px, 0 4px;
+		    text-align: center;
+		    -webkit-transition: border-color .25s, background-color .25s;
+		    transition: border-color .25s, background-color .25s;    
+		    font-size: 42px;
+		    cursor: pointer;
+		}
+		
+		.btn:active {
+		    text-indent: 2px;
+		}
+		
+		.verticle-mode {
+		    writing-mode: tb-rl;
+		    -webkit-writing-mode: vertical-rl;      
+		    writing-mode: vertical-rl;
+		    *writing-mode: tb-rl;
+		}
+	</style>
+	<body>
+		<p>恭喜你中了88元红包！</p>
+		<a href="javascript:" class="btn verticle-mode">领</a>
+	</body>
+</html>
