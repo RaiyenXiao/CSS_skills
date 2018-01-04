@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Grids</title>
+  <style>
+    .wrapper > div {
+      background: #eee;
+      padding: 1em;
+    }
+
+    .wrapper > div:nth-child(odd) {
+      background: #ddd;
+    }
+    
+    .wrapper {
+	  display: grid;
+	  grid-template-columns: 1fr 2fr 2fr;
+	  grid-column-gap: 1em;
+	  grid-row-gap: 1em;
+	  grid-gap: 1em 2em;
+	   grid-auto-rows: 100px;
+	   grid-auto-rows: minmax(100px, auto);
+	}
+	
+	/*列间距grid-column-gap: 1em;
+	 * 行间距grid-row-gap: 1em;
+	 * 上下左右
+	 * grid-gap: 1em 2em;
+	 * 网格高度：
+	 *  grid-auto-rows: 100px;
+	 * 以使用 minmax 设置最小的高度。
+	 * */
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div>
+      Lorem ipsum dolor sit amet, consectetur magna aliqua.
+     </div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur magna aliqua. 
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur magna aliqua. 
+    </div>
+  </div>
+</body>
+</html>

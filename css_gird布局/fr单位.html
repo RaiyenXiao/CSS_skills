@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Grids</title>
+  <style>
+    .wrapper > div {
+      background: #eee;
+      padding: 1em;
+    }
+
+    .wrapper > div:nth-child(odd) {
+      background: #ddd;
+    }
+    
+    .wrapper {
+	  display: grid;
+	 grid-template-columns: 1fr 2fr 1fr;
+	 grid-template-columns: repeat(4, 1fr);
+	}
+	
+	/*从左到右总共分了 1 + 2 + 1 个格子，就是 5 个格子，左边占 1个，也就是 1/5 这样的大小，中间占 2 个，右边占 1个。
+	 * grid-template-columns: 1fr 2fr 1fr;
+	 * repeat，顾名思义，重复的意思，1fr 重复四次，那就是 1fr 1fr 1fr 1fr。
+	 * grid-template-columns: repeat(4, 1fr);
+	 * 左边 1 个格子，右边 2 个格子，这样重复 4 次，相当于 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr。
+	 * grid-template-columns: repeat(4, 1fr 2fr);
+	 * */
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div>
+      Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum
+    </div>
+  </div>
+</body>
+</html>
